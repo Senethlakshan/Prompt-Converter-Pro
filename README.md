@@ -1,4 +1,5 @@
-# 🔧 Prompt Converter Pro v3.2
+ <img width="48" height="48" alt="icon48" src="https://github.com/user-attachments/assets/13df8792-7243-460e-bb10-83cc30d9d191" />
+ Prompt Converter Pro v3.2
 
 **Smart prompt converter with auto-detection, prompt cleaning, and specific output formats.**
 
