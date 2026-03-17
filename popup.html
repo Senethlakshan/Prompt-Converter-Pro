@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Converter Pro</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🔧 Prompt Converter <span class="version">v3.2</span></h1>
+      <p class="subtitle">Auto detection • Prompt cleaning • Specific formats</p>
+    </header>
+
+    <!-- Model Status -->
+    <div class="model-status" id="modelStatus">
+      <span class="status-icon">🤖</span>
+      <span class="status-text">AI: Click ⚡ to load (~60MB, optional)</span>
+      <button class="refresh-btn" id="initLLM" title="Load AI Models">⚡</button>
+    </div>
+
+    <!-- Tips -->
+    <div class="tips-box">
+      <div class="tip-item">
+        <span class="tip-icon">✨</span>
+        <span class="tip-text">Works instantly - no AI load needed!</span>
+      </div>
+      <div class="tip-item">
+        <span class="tip-icon">🧹</span>
+        <span class="tip-text">Auto-cleans messy prompts</span>
+      </div>
+    </div>
+
+    <div class="input-section">
+      <label for="inputPrompt">Your Prompt:</label>
+      <textarea id="inputPrompt" placeholder="Type anything - even messy text works!&#10;&#10;Examples:&#10;• create landing page headline 3 benefits AI receptionist&#10;• make blog ai small business simple short"></textarea>
+    </div>
+
+    <!-- Detected Type -->
+    <div class="detected-type" id="detectedType">
+      <span class="detect-label">Detected:</span>
+      <span class="detect-value" id="detectedTypeValue">Type to detect...</span>
+    </div>
+
+    <!-- Options -->
+    <div class="options-section">
+      <div class="option-group">
+        <label for="outputFormat">Format:</label>
+        <select id="outputFormat">
+          <optgroup label="📝 Text">
+            <option value="json">JSON</option>
+            <option value="xml">XML</option>
+            <option value="improved">Improved Text</option>
+            <option value="claude">Claude Style</option>
+            <option value="gpt">GPT Style</option>
+          </optgroup>
+          <optgroup label="🎨 Image">
+            <option value="midjourney">Midjourney</option>
+            <option value="dalle">DALL-E 3</option>
+            <option value="stable_diffusion">Stable Diffusion</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="option-group">
+        <label for="taskType">Type:</label>
+        <select id="taskType">
+          <option value="auto">🤖 Auto</option>
+          <option value="marketing">📢 Marketing</option>
+          <option value="coding">💻 Coding</option>
+          <option value="writing">✍️ Writing</option>
+          <option value="research">🔬 Research</option>
+          <option value="image">🎨 Image</option>
+        </select>
+      </div>
+    </div>
+
+    <button id="convertBtn" class="convert-btn">
+      <span class="btn-icon">⚡</span> Convert
+    </button>
+
+    <!-- Output -->
+    <div class="output-section">
+      <div class="output-header">
+        <label for="outputPrompt">Output:</label>
+        <button id="copyBtn" class="copy-btn" disabled>
+          <span class="copy-icon">📋</span> Copy
+        </button>
+      </div>
+      <textarea id="outputPrompt" readonly placeholder="Converted prompt appears here..."></textarea>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+      <span class="quick-label">Quick:</span>
+      <div class="quick-btns">
+        <button class="quick-btn" data-format="json">JSON</button>
+        <button class="quick-btn" data-format="xml">XML</button>
+        <button class="quick-btn" data-format="midjourney">MidJ</button>
+        <button class="quick-btn" data-format="dalle">DALL-E</button>
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="usage-guide">
+      <h3>📖 v3.2 Improvements</h3>
+      <div class="usage-method">
+        <strong>Specific Output Formats</strong>
+        <p>"3 benefits" → "bullet list (3 benefits)"</p>
+      </div>
+      <div class="usage-method">
+        <strong>Better Roles</strong>
+        <p>Marketing → "SaaS marketing copywriter"</p>
+      </div>
+      <div class="usage-method">
+        <strong>Prompt Cleaning</strong>
+        <p>"make blog ai" → "write a blog about AI"</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>v3.2 • Smart Detection • Prompt Cleaning • Specific Formats</p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast">Done!</div>
+
+  <script src="ultra-light-llm.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

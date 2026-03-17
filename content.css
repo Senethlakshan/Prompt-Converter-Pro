@@ -1,0 +1,135 @@
+/* Content Script Styles - Prompt Converter Extension */
+
+/* Floating Button Container */
+#prompt-converter-floating {
+  position: absolute;
+  z-index: 999999999;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+#prompt-converter-floating.pc-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+/* Floating Container */
+.pc-floating-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #1a1a2e;
+  padding: 6px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid #2a2a4a;
+  position: relative;
+}
+
+/* Convert Buttons */
+.pc-convert-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: #2a2a4a;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.pc-convert-btn:hover {
+  background: #6c5ce7;
+  transform: scale(1.1);
+}
+
+.pc-convert-btn span {
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-weight: 600;
+}
+
+/* More Button */
+.pc-more-btn {
+  width: 28px;
+  height: 36px;
+  font-size: 18px;
+  letter-spacing: -2px;
+}
+
+/* More Menu */
+.pc-more-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: #1a1a2e;
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid #2a2a4a;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.pc-more-menu.pc-show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.pc-more-option {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.pc-more-option:hover {
+  background: #6c5ce7;
+}
+
+/* Toast Styles */
+.pc-toast {
+  animation: pcSlideIn 0.3s ease;
+}
+
+/* Animations */
+@keyframes pcSlideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pcSlideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
