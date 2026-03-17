@@ -2,9 +2,12 @@
 
 **Smart prompt converter with auto-detection, prompt cleaning, and specific output formats.**
 
+<img width="1547" height="942" alt="image" src="https://github.com/user-attachments/assets/89a9e73f-d002-487b-8219-78f72b2dfd31" />
+
+
 ---
 
-## ✨ What's Fixed in v3.2
+## ✨ What's New in v3.2
 
 Based on real testing feedback:
 
