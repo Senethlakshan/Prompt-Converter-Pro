@@ -67,6 +67,7 @@ Based on real testing feedback:
 3. Click "Load unpacked"
 4. Select prompt-converter-extension folder
 ```
+<img width="517" height="746" alt="image" src="https://github.com/user-attachments/assets/7b76040d-7be0-49e4-95c8-296ac2ca7d92" />
 
 ---
 
